@@ -48,7 +48,7 @@ class VoyagerPageBlocksModalsServiceProvider extends ServiceProvider
     {
         return ['voyager-page-blocks.modals'];
     }
-    
+
     /**
      * Console-specific booting.
      *
