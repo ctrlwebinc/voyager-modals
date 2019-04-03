@@ -44,6 +44,11 @@ If you discover any security related issues, please email info@ctrlweb.ca instea
 
 MIT. Please see the [license file](license.md) for more information.
 
+## Remerciements (yeah, we're French-speakers)
+
+Merci au [Théâtre du Nouveau Monde][link-tnm], et à Olivier Chassé en particulier, pour leur soutien dans le 
+développement initial de ce projet. 
+
 [ico-version]: https://img.shields.io/packagist/v/ctrlwebinc/voyager-page-blocks-modals.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/ctrlwebinc/voyager-page-blocks-modals.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/ctrlwebinc/voyager-page-blocks-modals/master.svg?style=flat-square
@@ -55,3 +60,4 @@ MIT. Please see the [license file](license.md) for more information.
 [link-styleci]: https://styleci.io/repos/179335461
 [link-author]: https://github.com/ctrlwebinc
 [link-contributors]: ../../contributors
+[link-tnm]: https://www.tnm.qc.ca
