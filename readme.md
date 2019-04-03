@@ -52,6 +52,6 @@ MIT. Please see the [license file](license.md) for more information.
 [link-packagist]: https://packagist.org/packages/ctrlwebinc/voyager-page-blocks-modals
 [link-downloads]: https://packagist.org/packages/ctrlwebinc/voyager-page-blocks-modals
 [link-travis]: https://travis-ci.org/ctrlwebinc/voyager-page-blocks-modals
-[link-styleci]: https://styleci.io/repos/12345678
+[link-styleci]: https://styleci.io/repos/179335461
 [link-author]: https://github.com/ctrlwebinc
 [link-contributors]: ../../contributors
