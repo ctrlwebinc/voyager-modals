@@ -5,7 +5,6 @@ namespace Ctrlweb\VoyagerModals\Seeds;
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\DataType;
 use TCG\Voyager\Models\Permission;
-use TCG\Voyager\Models\Role;
 
 class ModalDataTypeSeeder extends Seeder
 {
@@ -17,7 +16,7 @@ class ModalDataTypeSeeder extends Seeder
     public function run()
     {
         $dataType = DataType::firstOrNew(['slug' => 'modals']);
-        if (!$dataType->exists) {
+        if (! $dataType->exists) {
             $dataType->fill([
                 'name' => 'modals',
                 'display_name_singular' => 'Modal',

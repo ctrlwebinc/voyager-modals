@@ -51,7 +51,7 @@ class ModalController extends VoyagerBaseController
     }
 
     /**
-     * POST - Minimize Block
+     * POST - Minimize Block.
      *
      * @param \Illuminate\Http\Request $request
      */
@@ -60,7 +60,7 @@ class ModalController extends VoyagerBaseController
     }
 
     /**
-     * POST - Change Modal Layout
+     * POST - Change Modal Layout.
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id - the modal id

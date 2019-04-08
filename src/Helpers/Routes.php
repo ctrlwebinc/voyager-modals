@@ -16,7 +16,7 @@ class Routes
     public static function registerPageRoutes()
     {
         // Prevents error before our migration has run
-        if (!Schema::hasTable('modals')) {
+        if (! Schema::hasTable('modals')) {
             return;
         }
 
