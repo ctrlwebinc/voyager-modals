@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `VoyagerPageBlocksModals` will be documented in this file.
+All notable changes to `Voyager Page Modals` will be documented in this file.
 
 ## Version 1.0
 
