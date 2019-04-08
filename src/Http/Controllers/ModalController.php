@@ -92,5 +92,4 @@ class ModalController extends VoyagerBaseController
     public function destroy(Request $request, $id)
     {
     }
-
 }
