@@ -27,7 +27,7 @@
     "autoload": {
         "psr-4": {
             "Ctrlweb\\VoyagerPageModals\\": "src/",
-            "Ctrlweb\\VoyagerPageModals\\Seeds": "database/seeds/"
+            "Ctrlweb\\VoyagerPageModals\\Seeds\\": "database/seeds/"
         }
     },
     "autoload-dev": {
