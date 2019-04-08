@@ -2,6 +2,8 @@
 
 namespace Ctrlweb\VoyagerPageModals;
 
-class PageModal
+use Illuminate\Database\Eloquent\Model;
+
+class PageModal extends Model
 {
 }

@@ -7,12 +7,37 @@
 
 This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
 
+## Prerequisites
+
+- Composer Installed
+- [Install Laravel](https://laravel.com/docs/installation)
+- [Install Voyager](https://github.com/the-control-group/voyager)
+- [Install Voyager Frontend](https://github.com/pvtl/voyager-frontend)
+- [Install Voyager Page Blocks](https://github.com/pvtl/voyager-page-blocks)
+
 ## Installation
 
 Via Composer
 
+1. Require this package in your project
 ``` bash
-$ composer require ctrlwebinc/voyager-page-modals
+composer require ctrlwebinc/voyager-page-modals
+```
+2. Add the following block to your project's config/page-blocks.php file
+```php
+$blocks['block-modal'] = [
+    'name' => 'Modal',
+    'template' => 'voyager-page-modals::block-modal',
+    'fields' => [
+        'saison' => [
+            'field' => 'saison',
+            'display_name' => 'Modal',
+            'partial' => 'voyager-page-modals::formfields.modal-selector',
+            'required' => 1,
+        ],
+    ],
+];
+
 ```
 
 ## Usage

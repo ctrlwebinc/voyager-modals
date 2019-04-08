@@ -13,8 +13,8 @@ class VoyagerPageModalsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'ctrlweb');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'ctrlweb');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'voyager-page-modals');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'voyager-page-modals');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
