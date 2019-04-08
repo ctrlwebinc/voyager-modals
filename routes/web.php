@@ -1,12 +1,6 @@
 <?php
 
 /**
- * Admin Routes.
+ * Pages catch-all route
  */
-Route::group([
-    'as' => 'voyager.page-modals.',
-    'prefix' => 'admin/page-modals/',
-    'middleware' => ['web', 'admin.user'],
-    'namespace' => '\Ctrlweb\VoyagerPageModals\Http\Controllers',
-], function () {
-});
+\Ctrlweb\VoyagerModals\Helpers\Routes::registerPageRoutes();

@@ -1,13 +1,13 @@
 <?php
 
-namespace Ctrlweb\VoyagerPageModals\Seeds;
+namespace Ctrlweb\VoyagerModals\Seeds;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\DataType;
 use TCG\Voyager\Models\Permission;
 use TCG\Voyager\Models\Role;
 
-class PageModalDataTypeSeeder extends Seeder
+class ModalDataTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,20 +16,20 @@ class PageModalDataTypeSeeder extends Seeder
      */
     public function run()
     {
-        $dataType = DataType::firstOrNew(['slug' => 'page-modals']);
+        $dataType = DataType::firstOrNew(['slug' => 'modals']);
         if (!$dataType->exists) {
             $dataType->fill([
-                'name' => 'page_modals',
+                'name' => 'modals',
                 'display_name_singular' => 'Modal',
                 'display_name_plural' => 'Modals',
                 'icon' => 'voyager-window-list',
-                'model_name' => 'Ctrlweb\\VoyagerPageModals\\PageModal',
-                'controller' => 'Ctrlweb\\VoyagerPageModals\\Http\\Controllers\\PageModalController',
+                'model_name' => 'Ctrlweb\\VoyagerModals\\Modal',
+                'controller' => 'Ctrlweb\\VoyagerModals\\Http\\Controllers\\ModalController',
                 'generate_permissions' => 1,
                 'description' => '',
             ])->save();
 
-            Permission::generateFor('page_modals');
+            Permission::generateFor('modals');
         }
     }
 }

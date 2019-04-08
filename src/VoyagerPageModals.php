@@ -1,8 +1,8 @@
 <?php
 
-namespace Ctrlweb\VoyagerPageModals;
+namespace Ctrlweb\VoyagerModals;
 
-class VoyagerPageModals
+class VoyagerModals
 {
     // Build wonderful things
 }

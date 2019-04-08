@@ -1,10 +1,10 @@
 <?php
 
-namespace Ctrlweb\VoyagerPageModals;
+namespace Ctrlweb\VoyagerModals;
 
 use Illuminate\Support\ServiceProvider;
 
-class VoyagerPageModalsServiceProvider extends ServiceProvider
+class VoyagerModalsServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
@@ -13,8 +13,8 @@ class VoyagerPageModalsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'voyager-page-modals');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'voyager-page-modals');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'voyager-modals');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'voyager-modals');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
@@ -31,11 +31,11 @@ class VoyagerPageModalsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/voyager-page-modals.php', 'voyager-page-modals');
+        $this->mergeConfigFrom(__DIR__.'/../config/voyager-modals.php', 'voyager-modals');
 
         // Register the service the package provides.
-        $this->app->singleton('voyager-page.modals', function ($app) {
-            return new VoyagerPageModals;
+        $this->app->singleton('voyager.modals', function ($app) {
+            return new VoyagerModals;
         });
     }
 
@@ -46,7 +46,7 @@ class VoyagerPageModalsServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['voyager-page.modals'];
+        return ['voyager.modals'];
     }
 
     /**
@@ -58,23 +58,23 @@ class VoyagerPageModalsServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/voyager-page-modals.php' => config_path('voyager-page-modals.php'),
-        ], 'voyager-page-modals.config');
+            __DIR__.'/../config/voyager-modals.php' => config_path('voyager-modals.php'),
+        ], 'voyager-modals.config');
 
         // Publishing the views.
         /*$this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/ctrlweb'),
-        ], 'voyager-page-modals.views');*/
+        ], 'voyager-modals.views');*/
 
         // Publishing assets.
         /*$this->publishes([
             __DIR__.'/../resources/assets' => public_path('vendor/ctrlweb'),
-        ], 'voyager-page-modals.views');*/
+        ], 'voyager-modals.views');*/
 
         // Publishing the translation files.
         /*$this->publishes([
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/ctrlweb'),
-        ], 'voyager-page-modals.views');*/
+        ], 'voyager-modals.views');*/
 
         // Registering package commands.
         // $this->commands([]);

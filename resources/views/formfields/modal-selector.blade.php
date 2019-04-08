@@ -1,5 +1,5 @@
 @php
-    $modals = \Ctrlweb\VoyagerPageModals\PageModal::all();
+    $modals = \Ctrlweb\VoyagerModals\Modal::all();
 @endphp
 @if($modals->isNotEmpty())
 <select

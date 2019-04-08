@@ -1,5 +1,5 @@
 {
-    "name": "ctrlwebinc/voyager-page-modals",
+    "name": "ctrlwebinc/voyager-modals",
     "description": "Arrrrr! A package to implement modals into Voyager Pages and Voyager Page Blocks",
     "license": "MIT",
     "authors": [
@@ -9,7 +9,7 @@
             "homepage": "https://ctrlweb.ca/"
         }
     ],
-    "homepage": "https://github.com/ctrlwebinc/voyager-page-modals",
+    "homepage": "https://github.com/ctrlwebinc/voyager-modals",
     "keywords": ["Laravel", "Voyager", "Voyager Pages", "Voyager Page Blocks", "Modals"],
     "require": {
         "illuminate/support": "~5",
@@ -26,22 +26,22 @@
     },
     "autoload": {
         "psr-4": {
-            "Ctrlweb\\VoyagerPageModals\\": "src/",
-            "Ctrlweb\\VoyagerPageModals\\Seeds\\": "database/seeds/"
+            "Ctrlweb\\VoyagerModals\\": "src/",
+            "Ctrlweb\\VoyagerModals\\Seeds\\": "database/seeds/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Ctrlweb\\VoyagerPageModals\\Tests\\": "tests"
+            "Ctrlweb\\VoyagerModals\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Ctrlweb\\VoyagerPageModals\\VoyagerPageModalsServiceProvider"
+                "Ctrlweb\\VoyagerModals\\VoyagerModalsServiceProvider"
             ],
             "aliases": {
-                "VoyagerPageModals": "Ctrlweb\\VoyagerPageModals\\Facades\\VoyagerPageModals"
+                "VoyagerModals": "Ctrlweb\\VoyagerModals\\Facades\\VoyagerModals"
             }
         }
     }

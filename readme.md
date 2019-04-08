@@ -1,4 +1,4 @@
-# Voyager Page Modals
+# Voyager Modals
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -21,18 +21,18 @@ Via Composer
 
 1. Require this package in your project
 ``` bash
-composer require ctrlwebinc/voyager-page-modals
+composer require ctrlwebinc/voyager-modals
 ```
 2. Add the following block to your project's config/page-blocks.php file
 ```php
 $blocks['block-modal'] = [
     'name' => 'Modal',
-    'template' => 'voyager-page-modals::block-modal',
+    'template' => 'voyager-modals::block-modal',
     'fields' => [
         'saison' => [
             'field' => 'saison',
             'display_name' => 'Modal',
-            'partial' => 'voyager-page-modals::formfields.modal-selector',
+            'partial' => 'voyager-modals::formfields.modal-selector',
             'required' => 1,
         ],
     ],
@@ -74,14 +74,14 @@ MIT. Please see the [license file](license.md) for more information.
 Merci au [Théâtre du Nouveau Monde][link-tnm], et à Olivier Chassé en particulier, pour son soutien dans le 
 développement initial de ce projet. 
 
-[ico-version]: https://img.shields.io/packagist/v/ctrlwebinc/voyager-page-modals.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/ctrlwebinc/voyager-page-modals.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/ctrlwebinc/voyager-page-modals/master.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/ctrlwebinc/voyager-modals.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/ctrlwebinc/voyager-modals.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/ctrlwebinc/voyager-modals/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/179335461/shield
 
-[link-packagist]: https://packagist.org/packages/ctrlwebinc/voyager-page-modals
-[link-downloads]: https://packagist.org/packages/ctrlwebinc/voyager-page-modals
-[link-travis]: https://travis-ci.org/ctrlwebinc/voyager-page-modals
+[link-packagist]: https://packagist.org/packages/ctrlwebinc/voyager-modals
+[link-downloads]: https://packagist.org/packages/ctrlwebinc/voyager-modals
+[link-travis]: https://travis-ci.org/ctrlwebinc/voyager-modals
 [link-styleci]: https://styleci.io/repos/179335461
 [link-author]: https://github.com/ctrlwebinc
 [link-contributors]: ../../contributors

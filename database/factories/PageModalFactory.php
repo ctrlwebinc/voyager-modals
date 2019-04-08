@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(Ctrlweb\VoyagerPageModals\PageModal::class, function (Faker $faker) {
+$factory->define(Ctrlweb\VoyagerModals\Modal::class, function (Faker $faker) {
     return [
         // TODO Make proper fake model
     ];

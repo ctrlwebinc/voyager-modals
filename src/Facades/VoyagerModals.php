@@ -1,10 +1,10 @@
 <?php
 
-namespace Ctrlweb\VoyagerPageModals\Facades;
+namespace Ctrlweb\VoyagerModals\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class VoyagerPageModals extends Facade
+class VoyagerModals extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -13,6 +13,6 @@ class VoyagerPageModals extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'voyager_page.modals';
+        return 'voyager.modals';
     }
 }
