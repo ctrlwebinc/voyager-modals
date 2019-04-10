@@ -22,8 +22,7 @@ class CreateModalsTable extends Migration
             $table->text('body')->nullable();
             $table->string('image')->nullable();
             $table->string('slug')->unique();
-            $table->text('meta_description')->nullable();
-            $table->enum('status', Page::$statuses)->default(Page::STATUS_INACTIVE);
+            $table->enum('status', Modal::$statuses)->default(Modal::STATUS_INACTIVE);
             $table->timestamps();
         });
     }
