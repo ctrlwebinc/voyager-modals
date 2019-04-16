@@ -2,9 +2,9 @@
 
 namespace Ctrlweb\VoyagerModals\Seeds;
 
+use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\DataRow;
 use TCG\Voyager\Models\DataType;
-use Illuminate\Database\Seeder;
 
 class ModalDataRowsTableSeeder extends Seeder
 {
@@ -16,7 +16,7 @@ class ModalDataRowsTableSeeder extends Seeder
         $modalDataType = DataType::where('slug', 'modals')->firstOrFail();
 
         $dataRow = $this->dataRow($modalDataType, 'id');
-        if (!$dataRow->exists) {
+        if (! $dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
                 'display_name' => 'id',
@@ -32,7 +32,7 @@ class ModalDataRowsTableSeeder extends Seeder
         }
 
         $dataRow = $this->dataRow($modalDataType, 'author_id');
-        if (!$dataRow->exists) {
+        if (! $dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
                 'display_name' => 'author_id',
@@ -48,7 +48,7 @@ class ModalDataRowsTableSeeder extends Seeder
         }
 
         $dataRow = $this->dataRow($modalDataType, 'title');
-        if (!$dataRow->exists) {
+        if (! $dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
                 'display_name' => 'title',
@@ -64,7 +64,7 @@ class ModalDataRowsTableSeeder extends Seeder
         }
 
         $dataRow = $this->dataRow($modalDataType, 'slug');
-        if (!$dataRow->exists) {
+        if (! $dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
                 'display_name' => 'slug',
@@ -80,7 +80,7 @@ class ModalDataRowsTableSeeder extends Seeder
         }
 
         $dataRow = $this->dataRow($modalDataType, 'excerpt');
-        if (!$dataRow->exists) {
+        if (! $dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text_area',
                 'display_name' => 'excerpt',
@@ -96,7 +96,7 @@ class ModalDataRowsTableSeeder extends Seeder
         }
 
         $dataRow = $this->dataRow($modalDataType, 'body');
-        if (!$dataRow->exists) {
+        if (! $dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'rich_text_box',
                 'display_name' => 'body',
@@ -112,7 +112,7 @@ class ModalDataRowsTableSeeder extends Seeder
         }
 
         $dataRow = $this->dataRow($modalDataType, 'status');
-        if (!$dataRow->exists) {
+        if (! $dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'select_dropdown',
                 'display_name' => 'satus',
@@ -126,15 +126,15 @@ class ModalDataRowsTableSeeder extends Seeder
                     'default' => 'active',
                     'options' => [
                         "ACTIVE"    => "ACTIVE",
-                        "INACTIVE"  => "INACTIVE"
-                    ]
+                        "INACTIVE"  => "INACTIVE",
+                    ],
                 ],
                 'order'        => 7,
             ])->save();
         }
 
         $dataRow = $this->dataRow($modalDataType, 'created_at');
-        if (!$dataRow->exists) {
+        if (! $dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
                 'display_name' => 'created_at',
@@ -150,7 +150,7 @@ class ModalDataRowsTableSeeder extends Seeder
         }
 
         $dataRow = $this->dataRow($modalDataType, 'updated_at');
-        if (!$dataRow->exists) {
+        if (! $dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
                 'display_name' => 'updated_at',
@@ -166,7 +166,7 @@ class ModalDataRowsTableSeeder extends Seeder
         }
 
         $dataRow = $this->dataRow($modalDataType, 'image');
-        if (!$dataRow->exists) {
+        if (! $dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'image',
                 'display_name' => 'image',
