@@ -125,8 +125,8 @@ class ModalDataRowsTableSeeder extends Seeder
                 'details'      => [
                     'default' => 'active',
                     'options' => [
-                        "ACTIVE"    => "ACTIVE",
-                        "INACTIVE"  => "INACTIVE",
+                        'ACTIVE'    => 'ACTIVE',
+                        'INACTIVE'  => 'INACTIVE',
                     ],
                 ],
                 'order'        => 7,
