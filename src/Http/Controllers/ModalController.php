@@ -3,14 +3,15 @@
 namespace Ctrlweb\VoyagerModals\Http\Controllers;
 
 use Ctrlweb\VoyagerModals\Modal;
+use Illuminate\Http\Request;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
 class ModalController extends VoyagerBaseController
 {
-    public function index(Request $request)
-    {
-        return redirect('/admin/modals');
-    }
+//    public function index(Request $request)
+//    {
+//        return redirect('/admin/modals');
+//    }
 
     /**
      * POST B(R)EAD - Read data.
