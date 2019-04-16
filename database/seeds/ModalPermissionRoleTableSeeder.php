@@ -2,8 +2,8 @@
 
 namespace Ctrlweb\VoyagerModals\Seeds;
 
-use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\Role;
+use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\Permission;
 
 class ModalPermissionRoleTableSeeder extends Seeder

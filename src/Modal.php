@@ -18,5 +18,4 @@ class Modal extends Model
      * @var array
      */
     public static $statuses = [self::STATUS_ACTIVE, self::STATUS_INACTIVE];
-
 }

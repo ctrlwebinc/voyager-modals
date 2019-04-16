@@ -2,8 +2,8 @@
 
 namespace Ctrlweb\VoyagerModals\Seeds;
 
-use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\Menu;
+use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\MenuItem;
 
 class ModalMenuItemsTableSeeder extends Seeder
@@ -27,7 +27,7 @@ class ModalMenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.modals.index',
             ]);
 
-            if (!$menuItem->exists) {
+            if (! $menuItem->exists) {
                 $menuItem->fill([
                     'target' => '_self',
                     'icon_class' => 'voyager-browser',
