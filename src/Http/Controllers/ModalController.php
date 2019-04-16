@@ -21,14 +21,14 @@ class ModalController extends VoyagerBaseController
      *
      * @return View
      */
-    public function edit(Request $request, $id)
-    {
-        $modal = Modal::findOrFail($id);
-
-        return view('voyager::modals.edit-add', [
-            'modal' => $modal,
-        ]);
-    }
+//    public function edit(Request $request, $id)
+//    {
+//        $modal = Modal::findOrFail($id);
+//
+//        return view('voyager::modals.edit-add', [
+//            'modal' => $modal,
+//        ]);
+//    }
 
     /**
      * POST BR(E)AD - Edit data.
@@ -38,9 +38,9 @@ class ModalController extends VoyagerBaseController
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
-    {
-    }
+//    public function update(Request $request, $id)
+//    {
+//    }
 
     /**
      * POST - Order data.

@@ -19,6 +19,7 @@ class ModalDatabaseSeeder extends Seeder
     public function run()
     {
         $this->seed('Ctrlweb\\VoyagerModals\\Seeds\\ModalDataTypeSeeder');
+        $this->seed('Ctrlweb\\VoyagerModals\\Seeds\\ModalDataRowsTableSeeder');
         $this->seed('Ctrlweb\\VoyagerModals\\Seeds\\ModalMenuItemsTableSeeder');
         $this->seed('Ctrlweb\\VoyagerModals\\Seeds\\ModalPermissionRoleTableSeeder');
     }

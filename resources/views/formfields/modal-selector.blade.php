@@ -8,7 +8,7 @@
     data-get-items-field="modal"
 >
 @foreach($modals as $modal)
-    <option value="{{ $modal->id }}" @if($dataTypeContent->modal == $modal->id)selected="selected"@endif>{{ $modal->name }}</option>
+    <option value="{{ $modal->id }}" @if($dataTypeContent->modal == $modal->id)selected="selected"@endif>{{ $modal->title }}</option>
 @endforeach
 </select>
 @else
