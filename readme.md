@@ -30,9 +30,15 @@ php artisan voyager-modals:install
 3. Add the following block to your project's config/page-blocks.php file
 ```php
 $blocks['block-modal'] = [
-    'name' => 'Modal',
-    'template' => 'voyager-modals::block-modal',
+    'name' => 'Modal CTA',
+    'template' => 'voyager-modals::modal-cta',
     'fields' => [
+        'cta_text' => [
+            'field' => 'cta_text',
+            'display_name' => 'CTA Text',
+            'partial' => 'voyager::formfields.text',
+            'required' => 0,
+        ],
         'modal' => [
             'field' => 'modal',
             'display_name' => 'Modal',
@@ -45,6 +51,11 @@ $blocks['block-modal'] = [
 ```
 
 ## Usage
+### Create a modal
+Log in to your voyager admin and go to Modals. Click on Add New and fill the form. You can then use the Block Content action to create the modal's body.
+
+### Adding a modal to your page
+Go to your page's block contents and add the Modal CTA block. Enter a title and chose your modal.  
 
 ## Change log
 
