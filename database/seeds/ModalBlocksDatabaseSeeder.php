@@ -2,15 +2,10 @@
 
 namespace Ctrlweb\VoyagerModals\Seeds;
 
-use TCG\Voyager\Traits\Seedable;
 use Illuminate\Database\Seeder;
 
 class ModalBlocksDatabaseSeeder extends Seeder
 {
-    use Seedable;
-
-    protected $seedersPath = __DIR__.'/';
-
     /**
      * Run the database seeds.
      *

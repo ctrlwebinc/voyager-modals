@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModalBlock extends Model
 {
-
     protected $touches = [
         'modal',
     ];
