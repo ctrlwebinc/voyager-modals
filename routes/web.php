@@ -3,7 +3,7 @@
 /**
  * Pages catch-all route.
  */
-\Ctrlweb\VoyagerModals\Helpers\Routes::registerPageRoutes();
+\Ctrlweb\VoyagerModals\Helpers\Routes::registerModalRoutes();
 
 Route::group([
     'as' => 'voyager.modal-blocks.',

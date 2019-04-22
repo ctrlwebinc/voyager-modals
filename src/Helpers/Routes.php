@@ -13,7 +13,7 @@ class Routes
     /**
      * Dynamically register pages.
      */
-    public static function registerPageRoutes()
+    public static function registerModalRoutes()
     {
         // Prevents error before our migration has run
         if (! Schema::hasTable('modals')) {
@@ -27,11 +27,11 @@ class Routes
             return Modal::all('slug');
         });
 
-        $slug = Request::path() === '/' ? 'home' : Request::path();
+        $slug = str_replace('modal/','', Request::path());
 
         // When the current URI is known to be a page slug, let it be a route
         if ($modals->contains('slug', $slug)) {
-            Route::get('/modals/{slug?}', "$modalController@getModal")
+            Route::get('/modal/{slug}', "$modalController@getModal")
                 ->middleware('web')
                 ->where('slug', '.+');
         }
