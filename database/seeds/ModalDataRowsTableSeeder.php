@@ -32,7 +32,7 @@ class ModalDataRowsTableSeeder extends Seeder
         }
 
         $dataRow = $this->dataRow($modalDataType, 'author_id');
-        if (!$dataRow->exists) {
+        if (! $dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
                 'display_name' => 'author_id',

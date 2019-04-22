@@ -3,8 +3,8 @@
 namespace Ctrlweb\VoyagerModals\Seeds;
 
 use TCG\Voyager\Models\Role;
-use TCG\Voyager\Models\Permission;
 use Illuminate\Database\Seeder;
+use TCG\Voyager\Models\Permission;
 
 class ModalBlocksPermissionRoleTableSeeder extends Seeder
 {

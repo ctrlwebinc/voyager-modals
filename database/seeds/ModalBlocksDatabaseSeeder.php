@@ -9,7 +9,7 @@ class ModalBlocksDatabaseSeeder extends Seeder
 {
     use Seedable;
 
-    protected $seedersPath = __DIR__ . '/';
+    protected $seedersPath = __DIR__.'/';
 
     /**
      * Run the database seeds.

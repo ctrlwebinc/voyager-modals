@@ -53,7 +53,7 @@ class ModalBlock extends Model
     public function cacheKey()
     {
         return sprintf(
-            "%s/%s-%s",
+            '%s/%s-%s',
             $this->getTable(),
             $this->getKey(),
             $this->updated_at->timestamp
@@ -69,7 +69,7 @@ class ModalBlock extends Model
     public function template()
     {
         if ($this->type === 'include') {
-            return (object)[
+            return (object) [
                 'template' => $this->type,
                 'fields' => [],
             ];
@@ -88,7 +88,7 @@ class ModalBlock extends Model
 
     public function getCachedDataAttribute()
     {
-        return Cache::remember($this->cacheKey() . ':datum', $this->cache_ttl, function () {
+        return Cache::remember($this->cacheKey().':datum', $this->cache_ttl, function () {
             return $this->data;
         });
     }

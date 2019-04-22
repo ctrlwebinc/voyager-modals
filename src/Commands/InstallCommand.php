@@ -2,17 +2,17 @@
 
 namespace Ctrlweb\VoyagerModals\Commands;
 
-use TCG\Voyager\Traits\Seedable;
-use Ctrlweb\VoyagerModals\VoyagerModalsServiceProvider;
 use Illuminate\Console\Command;
+use TCG\Voyager\Traits\Seedable;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
+use Ctrlweb\VoyagerModals\VoyagerModalsServiceProvider;
 
 class InstallCommand extends Command
 {
     use Seedable;
 
-    protected $seedersPath = __DIR__ . '/../../database/seeds/';
+    protected $seedersPath = __DIR__.'/../../database/seeds/';
 
     /**
      * The console command name.
@@ -35,8 +35,8 @@ class InstallCommand extends Command
      */
     protected function findComposer()
     {
-        if (file_exists(getcwd() . '/composer.phar')) {
-            return '"' . PHP_BINARY . '" ' . getcwd() . '/composer.phar';
+        if (file_exists(getcwd().'/composer.phar')) {
+            return '"'.PHP_BINARY.'" '.getcwd().'/composer.phar';
         }
 
         return 'composer';
@@ -59,7 +59,7 @@ class InstallCommand extends Command
 
         $this->info('Dumping the autoloaded files and reloading all new files');
         $composer = $this->findComposer();
-        $process = new Process($composer . ' dump-autoload');
+        $process = new Process($composer.' dump-autoload');
         $process->setWorkingDirectory(base_path())->mustRun();
 
         $this->info('Migrating the database tables into your application');
