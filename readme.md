@@ -23,7 +23,11 @@ Via Composer
 ``` bash
 composer require ctrlwebinc/voyager-modals
 ```
-2. Add the following block to your project's config/page-blocks.php file
+2. Run the install command
+``` bash
+php artisan voyager-modals:install
+```
+3. Add the following block to your project's config/page-blocks.php file
 ```php
 $blocks['block-modal'] = [
     'name' => 'Modal',

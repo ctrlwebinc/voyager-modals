@@ -15,6 +15,7 @@ class VoyagerModalsServiceProvider extends ServiceProvider
     {
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'voyager-modals');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'voyager-modals');
+        $this->loadViewsFrom(__DIR__.'/../resources/views/vendor/voyager', 'voyager');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
@@ -57,13 +58,13 @@ class VoyagerModalsServiceProvider extends ServiceProvider
     protected function bootForConsole()
     {
         // Publishing the configuration file.
-        $this->publishes([
+        /*$this->publishes([
             __DIR__.'/../config/voyager-modals.php' => config_path('voyager-modals.php'),
-        ], 'voyager-modals.config');
+        ], 'voyager-modals.config');*/
 
         // Publishing the views.
         /*$this->publishes([
-            __DIR__.'/../resources/views' => base_path('resources/views/vendor/ctrlweb'),
+            __DIR__.'/../resources/views/vendor' => base_path('resources/views/vendor'),
         ], 'voyager-modals.views');*/
 
         // Publishing assets.
@@ -77,6 +78,9 @@ class VoyagerModalsServiceProvider extends ServiceProvider
         ], 'voyager-modals.views');*/
 
         // Registering package commands.
-        // $this->commands([]);
+        $this->commands([
+            Commands\InstallCommand::class,
+//            Commands\SeedCommand::class
+        ]);
     }
 }

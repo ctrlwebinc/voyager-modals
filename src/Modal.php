@@ -3,6 +3,7 @@
 namespace Ctrlweb\VoyagerModals;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Modal extends Model
 {
@@ -23,6 +24,16 @@ class Modal extends Model
     public function blocks()
     {
         return $this->hasMany('Ctrlweb\VoyagerModals\ModalBlock');
+    }
+
+    public function save(array $options = [])
+    {
+        // If no author has been assigned, assign the current user's id as the author of the post
+        if (!$this->author_id && Auth::user()) {
+            $this->author_id = Auth::user()->id;
+        }
+
+        parent::save();
     }
 
     /**

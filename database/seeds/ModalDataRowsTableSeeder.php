@@ -32,7 +32,7 @@ class ModalDataRowsTableSeeder extends Seeder
         }
 
         $dataRow = $this->dataRow($modalDataType, 'author_id');
-        if (! $dataRow->exists) {
+        if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
                 'display_name' => 'author_id',
@@ -74,7 +74,14 @@ class ModalDataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => [
+                    'slugify' => [
+                        'origin' => 'title',
+                    ],
+                    'validation' => [
+                        'rule'  => 'unique:modals,slug',
+                    ],
+                ],
                 'order'        => 4,
             ])->save();
         }
@@ -123,7 +130,7 @@ class ModalDataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => [
-                    'default' => 'active',
+                    'default' => 'ACTIVE',
                     'options' => [
                         'ACTIVE'    => 'ACTIVE',
                         'INACTIVE'  => 'INACTIVE',
