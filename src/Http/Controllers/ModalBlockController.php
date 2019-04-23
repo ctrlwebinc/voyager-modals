@@ -2,16 +2,16 @@
 
 namespace Ctrlweb\VoyagerModals\Http\Controllers;
 
- use Illuminate\View\View;
- use Illuminate\Http\Request;
- use Ctrlweb\VoyagerModals\Modal;
- use Pvtl\VoyagerPageBlocks\Page;
- use TCG\Voyager\Facades\Voyager;
- use Illuminate\Support\Facades\URL;
- use Ctrlweb\VoyagerModals\ModalBlock;
- use Pvtl\VoyagerPageBlocks\Traits\Blocks;
- use Pvtl\VoyagerPageBlocks\Validators\BlockValidators;
- use TCG\Voyager\Http\Controllers\VoyagerBaseController;
+use Illuminate\View\View;
+use Illuminate\Http\Request;
+use Ctrlweb\VoyagerModals\Modal;
+use Pvtl\VoyagerPageBlocks\Page;
+use TCG\Voyager\Facades\Voyager;
+use Illuminate\Support\Facades\URL;
+use Ctrlweb\VoyagerModals\ModalBlock;
+use Pvtl\VoyagerPageBlocks\Traits\Blocks;
+use Pvtl\VoyagerPageBlocks\Validators\BlockValidators;
+use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
 class ModalBlockController extends VoyagerBaseController
 {

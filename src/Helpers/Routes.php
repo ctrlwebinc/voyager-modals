@@ -27,7 +27,7 @@ class Routes
             return Modal::all('slug');
         });
 
-        $slug = str_replace('modal/','', Request::path());
+        $slug = str_replace('modal/', '', Request::path());
 
         // When the current URI is known to be a page slug, let it be a route
         if ($modals->contains('slug', $slug)) {
