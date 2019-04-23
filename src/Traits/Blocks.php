@@ -39,7 +39,8 @@ trait Blocks
             if (empty($ttl) && app('env') != 'local') {
                 $ttl = 1;
             }
-            return Cache::remember($cacheKey, $ttl, function () use ($block) {
+
+	    return Cache::remember($cacheKey, $ttl, function () use ($block) {
                 return $block;
             });
         }, $blocks->toArray());
