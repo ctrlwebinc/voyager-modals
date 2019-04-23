@@ -22,12 +22,12 @@ trait Blocks
     {
         return array_map(function ($block) {
             // 'Include' block types
-            if ($block->type === 'include' && !empty($block->path)) {
+            if ($block->type === 'include' && ! empty($block->path)) {
                 $block->html = ClassEvents::executeClass($block->path)->render();
             }
 
             // 'Template' block types
-            if ($block->type === 'template' && !empty($block->template)) {
+            if ($block->type === 'template' && ! empty($block->template)) {
                 $block = $this->prepareTemplateBlockTypes($block);
             }
 
