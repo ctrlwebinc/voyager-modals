@@ -40,7 +40,7 @@ trait Blocks
                 $ttl = 1;
             }
 
-	    return Cache::remember($cacheKey, $ttl, function () use ($block) {
+            return Cache::remember($cacheKey, $ttl, function () use ($block) {
                 return $block;
             });
         }, $blocks->toArray());
