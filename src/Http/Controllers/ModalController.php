@@ -52,7 +52,7 @@ class ModalController extends VoyagerBaseController
             $modals->where('title','like','%'.$request->input('search').'%');
         }
         $results = [];
-        foreach ($modals->get() as $modal){
+        foreach ($modals->get() as $modal) {
             $results[] = [
                 'id'   => $modal->id,
                 'text' => $modal->title,
