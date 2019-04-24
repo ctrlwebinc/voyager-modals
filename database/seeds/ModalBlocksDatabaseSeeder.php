@@ -8,7 +8,7 @@ use TCG\Voyager\Traits\Seedable;
 class ModalBlocksDatabaseSeeder extends Seeder
 {
     use Seedable;
-    
+
     /**
      * Run the database seeds.
      *
