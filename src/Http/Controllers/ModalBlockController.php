@@ -2,16 +2,16 @@
 
 namespace Ctrlweb\VoyagerModals\Http\Controllers;
 
- use Illuminate\View\View;
- use Illuminate\Http\Request;
- use Ctrlweb\VoyagerModals\Modal;
- use Pvtl\VoyagerPageBlocks\Page;
- use TCG\Voyager\Facades\Voyager;
- use Illuminate\Support\Facades\URL;
- use Ctrlweb\VoyagerModals\ModalBlock;
- use Pvtl\VoyagerPageBlocks\Traits\Blocks;
- use Pvtl\VoyagerPageBlocks\Validators\BlockValidators;
- use TCG\Voyager\Http\Controllers\VoyagerBaseController;
+use Illuminate\View\View;
+use Illuminate\Http\Request;
+use Ctrlweb\VoyagerModals\Modal;
+use Pvtl\VoyagerPageBlocks\Page;
+use TCG\Voyager\Facades\Voyager;
+use Illuminate\Support\Facades\URL;
+use Ctrlweb\VoyagerModals\ModalBlock;
+use Pvtl\VoyagerPageBlocks\Traits\Blocks;
+use Pvtl\VoyagerPageBlocks\Validators\BlockValidators;
+use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
 class ModalBlockController extends VoyagerBaseController
 {
@@ -101,7 +101,7 @@ class ModalBlockController extends VoyagerBaseController
         $block->save();
 
         return redirect()
-            ->to(URL::previous()."#block-id-".$id)
+            ->to(URL::previous().'#block-id-'.$id)
             ->with([
                 'message' => __('voyager::generic.successfully_updated')." {$dataType->display_name_singular}",
                 'alert-type' => 'success',
@@ -152,7 +152,7 @@ class ModalBlockController extends VoyagerBaseController
         return redirect()
             ->back()
             ->with([
-                'message' => __('voyager::generic.successfully_updated')." Page Layout",
+                'message' => __('voyager::generic.successfully_updated').' Page Layout',
                 'alert-type' => 'success',
             ]);
     }
@@ -184,7 +184,7 @@ class ModalBlockController extends VoyagerBaseController
         ]);
 
         return redirect()
-            ->route('voyager.modal-blocks.edit', [$page->id,'#block-id-'.$block->id])
+            ->route('voyager.modal-blocks.edit', [$page->id, '#block-id-'.$block->id])
             ->with([
                 'message' => __('voyager::generic.successfully_added_new')." {$dataType->display_name_singular}",
                 'alert-type' => 'success',

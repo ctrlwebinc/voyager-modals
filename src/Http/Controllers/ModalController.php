@@ -2,11 +2,11 @@
 
 namespace Ctrlweb\VoyagerModals\Http\Controllers;
 
-use TCG\Voyager\Http\Controllers\VoyagerBaseController;
-use Pvtl\VoyagerPageBlocks\Traits\Blocks;
 use Request;
 use Ctrlweb\VoyagerModals\Modal;
 use Illuminate\Support\Facades\View;
+use Pvtl\VoyagerPageBlocks\Traits\Blocks;
+use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
 class ModalController extends VoyagerBaseController
 {
@@ -14,9 +14,10 @@ class ModalController extends VoyagerBaseController
 
     protected $viewPath = 'voyager-frontend';
 
-    public function getModal($slug){
+    public function getModal($slug)
+    {
         //Abort if request is not ajax
-        if(! Request::ajax()){
+        if (! Request::ajax()) {
             abort(404);
         }
 

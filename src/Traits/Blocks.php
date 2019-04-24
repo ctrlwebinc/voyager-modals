@@ -7,14 +7,13 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Storage;
 use Pvtl\VoyagerFrontend\Helpers\ClassEvents;
 use Pvtl\VoyagerFrontend\Helpers\BladeCompiler;
 
 trait Blocks
 {
     /**
-     * Ensure each page block has the correct data, in the correct format
+     * Ensure each page block has the correct data, in the correct format.
      *
      * @param Collection $blocks
      * @return array
@@ -23,12 +22,12 @@ trait Blocks
     {
         return array_map(function ($block) {
             // 'Include' block types
-            if ($block->type === 'include' && !empty($block->path)) {
+            if ($block->type === 'include' && ! empty($block->path)) {
                 $block->html = ClassEvents::executeClass($block->path)->render();
             }
 
             // 'Template' block types
-            if ($block->type === 'template' && !empty($block->template)) {
+            if ($block->type === 'template' && ! empty($block->template)) {
                 $block = $this->prepareTemplateBlockTypes($block);
             }
 
@@ -40,6 +39,7 @@ trait Blocks
             if (empty($ttl) && app('env') != 'local') {
                 $ttl = 1;
             }
+
             return Cache::remember($cacheKey, $ttl, function () use ($block) {
                 return $block;
             });
@@ -49,7 +49,7 @@ trait Blocks
     /**
      * Ensure each page block has all of the keys from
      * config, in the DB output (to prevent errors in views)
-     * + compile each piece of HTML (eg. for short codes)
+     * + compile each piece of HTML (eg. for short codes).
      *
      * @param $block
      * @return mixed
@@ -61,8 +61,8 @@ trait Blocks
         $templateConfig = Config::get("page-blocks.$templateKey");
 
         // Ensure every key from config exists in collection
-        foreach ((array)$templateConfig['fields'] as $fieldName => $fieldConfig) {
-            if (!array_key_exists($fieldName, $block->data)) {
+        foreach ((array) $templateConfig['fields'] as $fieldName => $fieldConfig) {
+            if (! array_key_exists($fieldName, $block->data)) {
                 $block->data->$fieldName = null;
             }
         }
@@ -86,7 +86,7 @@ trait Blocks
     {
         foreach ($request->files as $key => $field) {
             if (is_array($request->file($key))) {
-                $multiImages = array();
+                $multiImages = [];
                 foreach ($request->file($key) as $key2 => $file) {
                     $filePath = $file->store('public/blocks');
                     $multiImages[] = str_replace('public/', '', $filePath);
