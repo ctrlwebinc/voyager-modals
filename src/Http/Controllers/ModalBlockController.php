@@ -173,7 +173,7 @@ class ModalBlockController extends VoyagerBaseController
             $type = $request->input('type');
             $path = '\Pvtl\VoyagerFrontend\Http\Controllers\PostController::recentBlogPosts()';
         } else {
-            list($type, $path) = explode('|', $request->input('type'));
+            [$type, $path] = explode('|', $request->input('type'));
         }
 
         $block = $page->blocks()->create([
