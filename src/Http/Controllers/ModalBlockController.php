@@ -91,7 +91,7 @@ class ModalBlockController extends VoyagerBaseController
                 ]);
         }
 
-        $data = $this->uploadImages($request, $data, $keepFilename = true);
+        $data = $this->uploadImages($request, $data, true);
 
         $block->data = $data;
         $block->path = $block->type === 'include' ? $request->input('path') : $block->path;
