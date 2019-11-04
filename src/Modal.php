@@ -2,8 +2,8 @@
 
 namespace Ctrlweb\VoyagerModals;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Modal extends Model
 {

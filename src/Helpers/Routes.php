@@ -4,9 +4,9 @@ namespace Ctrlweb\VoyagerModals\Helpers;
 
 use Ctrlweb\VoyagerModals\Modal;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Request;
 
 class Routes
 {

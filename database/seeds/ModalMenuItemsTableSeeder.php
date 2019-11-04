@@ -2,8 +2,8 @@
 
 namespace Ctrlweb\VoyagerModals\Seeds;
 
-use TCG\Voyager\Models\Menu;
 use Illuminate\Database\Seeder;
+use TCG\Voyager\Models\Menu;
 use TCG\Voyager\Models\MenuItem;
 
 class ModalMenuItemsTableSeeder extends Seeder

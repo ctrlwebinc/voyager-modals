@@ -2,11 +2,11 @@
 
 namespace Ctrlweb\VoyagerModals\Commands;
 
+use Ctrlweb\VoyagerModals\VoyagerModalsServiceProvider;
 use Illuminate\Console\Command;
-use TCG\Voyager\Traits\Seedable;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
-use Ctrlweb\VoyagerModals\VoyagerModalsServiceProvider;
+use TCG\Voyager\Traits\Seedable;
 
 class InstallCommand extends Command
 {

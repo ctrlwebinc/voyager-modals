@@ -2,9 +2,9 @@
 
 namespace Ctrlweb\VoyagerModals;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Database\Eloquent\Model;
 
 class ModalBlock extends Model
 {
