@@ -13,8 +13,10 @@ class ModalBlocksDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->seed('Ctrlweb\\VoyagerModals\\Seeds\\ModalBlocksDataTypesTableSeeder');
-        $this->seed('Ctrlweb\\VoyagerModals\\Seeds\\ModalBlocksPermissionsTableSeeder');
-        $this->seed('Ctrlweb\\VoyagerModals\\Seeds\\ModalBlocksPermissionRoleTableSeeder');
+        $this->call([
+            ModalBlocksDataTypesTableSeeder::class,
+            ModalBlocksPermissionsTableSeeder::class,
+            ModalBlocksPermissionRoleTableSeeder::class,
+        ]);
     }
 }
