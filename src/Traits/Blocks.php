@@ -9,9 +9,15 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\View;
 use Pvtl\VoyagerFrontend\Helpers\BladeCompiler;
 use Pvtl\VoyagerFrontend\Helpers\ClassEvents;
+use Pvtl\VoyagerPageBlocks\Traits\Blocks as VoyagerPageBlocks;
 
 trait Blocks
 {
+    use VoyagerPageBlocks {
+        VoyagerPageBlocks::prepareEachBlock as parentPrepareEachBlock;
+        VoyagerPageBlocks::prepareTemplateBlockTypes as parentPrepareTemplateBlockTypes;
+        VoyagerPageBlocks::generatePlaceholders as parentGeneratePlaceholders;
+    }
     /**
      * Ensure each page block has the correct data, in the correct format.
      *
@@ -20,30 +26,7 @@ trait Blocks
      */
     protected function prepareEachBlock(Collection $blocks)
     {
-        return array_map(function ($block) {
-            // 'Include' block types
-            if ($block->type === 'include' && ! empty($block->path)) {
-                $block->html = ClassEvents::executeClass($block->path)->render();
-            }
-
-            // 'Template' block types
-            if ($block->type === 'template' && ! empty($block->template)) {
-                $block = $this->prepareTemplateBlockTypes($block);
-            }
-
-            // Add HTML to cache by key: $block->id - $block->page_id - $block->updated_at
-            $cacheKey = "blocks/$block->id-$block->page_id-$block->updated_at";
-
-            $ttl = $block->cache_ttl;
-            // When not in local dev (eg. prod), let's always cache for at least 1min
-            if (empty($ttl) && app('env') != 'local') {
-                $ttl = 1;
-            }
-
-            return Cache::remember($cacheKey, $ttl, function () use ($block) {
-                return $block;
-            });
-        }, $blocks->toArray());
+        return $this->parentPrepareEachBlock($blocks);
     }
 
     /**
@@ -57,29 +40,7 @@ trait Blocks
      */
     protected function prepareTemplateBlockTypes($block)
     {
-        $templateKey = $block->path;
-        $templateConfig = Config::get("page-blocks.$templateKey");
-
-        // Ensure every key from config exists in collection
-        foreach ((array) $templateConfig['fields'] as $fieldName => $fieldConfig) {
-            if (! array_key_exists($fieldName, $block->data)) {
-                $block->data->$fieldName = null;
-            }
-        }
-
-        // Compile each piece of content from the DB, into HTML
-        foreach ($block->data as $key => $data) {
-            $block->data->$key = BladeCompiler::getHtmlFromString($data);
-        }
-
-        // Compile the Blade View to give us HTML output
-        if (View::exists($block->template)) {
-            $block->html = View::make($block->template, [
-                'blockData' => $block->data,
-            ])->render();
-        }
-
-        return $block;
+        return $this->parentPrepareTemplateBlockTypes($block);
     }
 
     public function uploadImages(Request $request, array $data, bool $keepFilename = false): array
@@ -89,28 +50,23 @@ trait Blocks
                 $multiImages = [];
                 foreach ($request->file($key) as $key2 => $file) {
                     if ($keepFilename) {
-                        $filePath = $file->storeAs('public/blocks', $file->getClientOriginalName());
+                        $filePath = $file->storeAs('public/', $file->getClientOriginalName());
                     } else {
-                        $filePath = $file->store('public/blocks');
+                        $filePath = $file->store('public/');
                     }
-                    $multiImages[] = str_replace('public/blocks', '', $filePath);
+                    $multiImages[] = str_replace('public/', '', $filePath);
                 }
                 $data[$key] = json_encode($multiImages);
             } else {
-                $filePath = $request->file($key)->store('public/blocks');
-                $data[$key] = str_replace('public/blocks', '', $filePath);
+                $filePath = $request->file($key)->store('public/');
+                $data[$key] = str_replace('public/', '', $filePath);
             }
         }
-
         return $data;
     }
 
     public function generatePlaceholders(Request $request): array
     {
-        $configKey = explode('|', $request->input('type'))[1];
-
-        return array_map(function ($field) {
-            return array_key_exists('placeholder', $field) ? $field['placeholder'] : '';
-        }, config("page-blocks.$configKey.fields"));
+        return $this->parentGeneratePlaceholders($request);
     }
 }
