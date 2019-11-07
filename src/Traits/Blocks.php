@@ -14,6 +14,7 @@ trait Blocks
         VoyagerPageBlocks::prepareTemplateBlockTypes as parentPrepareTemplateBlockTypes;
         VoyagerPageBlocks::generatePlaceholders as parentGeneratePlaceholders;
     }
+
     /**
      * Ensure each page block has the correct data, in the correct format.
      *
@@ -58,6 +59,7 @@ trait Blocks
                 $data[$key] = str_replace('public/', '', $filePath);
             }
         }
+
         return $data;
     }
 
