@@ -45,4 +45,23 @@ class ModalController extends VoyagerBaseController
             'modal' => $modal,
         ]);
     }
+
+    public function get_modals_for_select(\Illuminate\Http\Request $request)
+    {
+        $modals = Modal::where('status', 'ACTIVE');
+        if ($request->has('search')) {
+            $modals->where('title', 'like', '%'.$request->input('search').'%');
+        }
+        $results = [];
+        foreach ($modals->get() as $modal) {
+            $results[] = [
+                'id'   => $modal->id,
+                'text' => $modal->title,
+            ];
+        }
+
+        return response()->json([
+            'results' => $results,
+        ]);
+    }
 }

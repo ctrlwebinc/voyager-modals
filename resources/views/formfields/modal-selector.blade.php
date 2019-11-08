@@ -4,11 +4,10 @@
 @if($modals->isNotEmpty())
 <select
     class="form-control select2-ajax" name="{{ $row->field }}"
-    data-get-items-route="/admin/modals"
-    data-get-items-field="modal"
+    data-get-items-route="/admin/modals/all"
 >
 @foreach($modals as $modal)
-        <option value="{{ $modal->id }}" @if(isset($dataTypeContent->modal) && $dataTypeContent->modal == $modal->id)selected="selected"@endif>{{ $modal->title }} </option>
+    <option value="{{ $modal->id }}" @if(isset($dataTypeContent->{$row->field}) && $dataTypeContent->{$row->field} == $modal->id)selected="selected"@endif>{{ $modal->title }}</option>
 @endforeach
 </select>
 @else

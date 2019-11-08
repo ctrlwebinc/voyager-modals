@@ -14,15 +14,16 @@
     "require": {
         "illuminate/support": "~5",
         "tcg/voyager": "^1.1",
-        "pvtl/voyager-frontend": "~0.8.0",
-        "pvtl/voyager-pages": "~0.2.0",
-        "pvtl/voyager-page-blocks": "~0.8.7"
+        "pvtl/voyager-frontend": "^0.8.0",
+        "pvtl/voyager-pages": "^0.2.0",
+        "pvtl/voyager-page-blocks": "^0.8.7"
     },
     "require-dev": {
         "phpunit/phpunit": "~7.0",
         "mockery/mockery": "^1.1",
         "orchestra/testbench": "~3.0",
-        "sempro/phpunit-pretty-print": "^1.0"
+        "sempro/phpunit-pretty-print": "^1.0",
+        "illuminated/testing-tools": "^5.8"
     },
     "autoload": {
         "psr-4": {
