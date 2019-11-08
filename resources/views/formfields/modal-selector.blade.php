@@ -3,7 +3,7 @@
 @endphp
 @if($modals->isNotEmpty())
 <select
-    class="form-control select2-ajax" name="modal"
+    class="form-control select2-ajax" name="{{ $row->field }}"
     data-get-items-route="/admin/modals"
     data-get-items-field="modal"
 >
