@@ -39,7 +39,7 @@ class ModalController extends VoyagerBaseController
                     'type' => $block->type,
                 ];
             });
-            
+
         return view('voyager-modals::default', [
             'blocks' => $this->prepareEachBlock($blocks),
             'modal' => $modal,
