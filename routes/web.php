@@ -3,8 +3,6 @@
 /**
  * Pages catch-all route.
  */
-\Ctrlweb\VoyagerModals\Helpers\Routes::registerModalRoutes();
-
 Route::group([
     'as' => 'voyager.modal-blocks.',
     'prefix' => 'admin/modal-blocks/',
@@ -21,4 +19,11 @@ Route::group([
     'namespace' => '\Ctrlweb\VoyagerModals\Http\Controllers',
 ], function () {
     Route::get('all', ['uses' => 'ModalController@get_modals_for_select', 'as' => 'all']);
+});
+Route::group([
+    'as' => 'voyager.modals.',
+    'middleware' => ['web', 'guest'],
+    'namespace' => '\Ctrlweb\VoyagerModals\Http\Controllers',
+], function () {
+    Route::get('modal/{slug}', ['uses' => 'ModalController@getModal', 'as' => 'getModal']);
 });
