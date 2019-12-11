@@ -17,7 +17,7 @@ class ModalController extends VoyagerBaseController
     public function getModal($slug)
     {
         //Abort if request is not ajax
-        if (! Request::ajax()) {
+        if (!Request::ajax()) {
             abort(404);
         }
 
@@ -40,6 +40,7 @@ class ModalController extends VoyagerBaseController
                 ];
             });
 
+            
         return view('voyager-modals::default', [
             'blocks' => $this->prepareEachBlock($blocks),
             'modal' => $modal,
@@ -50,12 +51,12 @@ class ModalController extends VoyagerBaseController
     {
         $modals = Modal::where('status', 'ACTIVE');
         if ($request->has('search')) {
-            $modals->where('title', 'like', '%'.$request->input('search').'%');
+            $modals->where('title', 'like', '%' . $request->input('search') . '%');
         }
         $results = [];
         foreach ($modals->get() as $modal) {
             $results[] = [
-                'id'   => $modal->id,
+                'id' => $modal->id,
                 'text' => $modal->title,
             ];
         }
