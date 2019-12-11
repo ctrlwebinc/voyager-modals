@@ -22,7 +22,7 @@ Route::group([
 });
 Route::group([
     'as' => 'voyager.modals.',
-    'middleware' => ['web', 'guest'],
+    'middleware' => ['web'],
     'namespace' => '\Ctrlweb\VoyagerModals\Http\Controllers',
 ], function () {
     Route::get('modal/{slug}', ['uses' => 'ModalController@getModal', 'as' => 'getModal']);
