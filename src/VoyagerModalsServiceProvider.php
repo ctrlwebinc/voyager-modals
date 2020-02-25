@@ -82,8 +82,8 @@ class VoyagerModalsServiceProvider extends ServiceProvider
         // Registering package commands.
         $this->commands(
             [
-            Commands\InstallCommand::class,
-            // Commands\SeedCommand::class
+                Commands\InstallCommand::class,
+                // Commands\SeedCommand::class
             ]
         );
     }
