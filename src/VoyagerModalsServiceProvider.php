@@ -35,9 +35,11 @@ class VoyagerModalsServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/voyager-modals.php', 'voyager-modals');
 
         // Register the service the package provides.
-        $this->app->singleton('voyager.modals', function ($app) {
-            return new VoyagerModals;
-        });
+        $this->app->singleton(
+            'voyager.modals', function ($app) {
+                return new VoyagerModals;
+            }
+        );
     }
 
     /**
@@ -78,9 +80,11 @@ class VoyagerModalsServiceProvider extends ServiceProvider
         ], 'voyager-modals.views');*/
 
         // Registering package commands.
-        $this->commands([
-            Commands\InstallCommand::class,
-//            Commands\SeedCommand::class
-        ]);
+        $this->commands(
+            [
+                Commands\InstallCommand::class,
+                // Commands\SeedCommand::class
+            ]
+        );
     }
 }
