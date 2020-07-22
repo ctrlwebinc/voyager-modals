@@ -12,7 +12,7 @@
     "homepage": "https://github.com/ctrlwebinc/voyager-modals",
     "keywords": ["Laravel", "Voyager", "Voyager Pages", "Voyager Page Blocks", "Modals"],
     "require": {
-        "illuminate/support": "~5",
+        "illuminate/support": "~5.0|^6.0|^7.0",
         "tcg/voyager": "^1.1",
         "pvtl/voyager-frontend": "^0.9.0",
         "pvtl/voyager-pages": "^0.2.0",
